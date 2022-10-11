@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, Kbd } from "@chakra-ui/react";
+import "./style.css";
 
 export interface IInstructionProps {
   resetBoard: () => void;
@@ -10,7 +11,7 @@ const Instruction = ({ resetBoard }: IInstructionProps) => (
       How to Play
     </Heading>
     <Heading as="h5" size="sm" mt={1}>
-      NOTE: Start the game by pressing <Kbd>d</Kbd>
+      NOTE: Start the game by pressing <Kbd>Spacebar</Kbd> or <Kbd>Enter</Kbd>
     </Heading>
     <Flex flexDirection="row" mt={3}>
       <Flex flexDirection={"column"}>
@@ -28,7 +29,7 @@ const Instruction = ({ resetBoard }: IInstructionProps) => (
         </span>
       </Flex>
       <Flex flexDirection="column">
-        <Button onClick={() => resetBoard()}>Reset game</Button>
+        <Button color="black" onClick={() => resetBoard()}>Reset game</Button>
       </Flex>
     </Flex>
   </Box>

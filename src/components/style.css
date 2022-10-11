@@ -1,0 +1,8 @@
+.chakra-ui-light {
+  background: radial-gradient(rgb(1, 8, 53), rgb(5, 32, 12));
+  color: whitesmoke;
+}
+
+kbd {
+  color: black;
+}

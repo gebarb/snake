@@ -22,6 +22,7 @@ import {
   IObjectBody,
 } from "../utils";
 import Instruction from "./Instructions";
+import "./style.css";
 
 export interface ICanvasBoard {
   height: number;
@@ -79,6 +80,9 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
           case "a":
             moveSnake(-20, 0, disallowedDirection);
             break;
+          case " ":
+          case "Spacebar":
+          case "Enter":
           case "D":
           case "d":
             event.preventDefault();
@@ -90,7 +94,9 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
           disallowedDirection !== "LEFT" &&
           disallowedDirection !== "UP" &&
           disallowedDirection !== "DOWN" &&
-          event.key === "d"
+          (event.key === " " ||
+            event.key === "Spacebar" ||
+            event.key === "Enter")
         )
           moveSnake(20, 0, disallowedDirection); //Move RIGHT at start
       }
@@ -165,7 +171,7 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
       <canvas
         ref={canvasRef}
         style={{
-          border: `3px solid ${gameEnded ? "red" : "black"}`,
+          border: `3px solid ${gameEnded ? "red" : "whitesmoke"}`,
         }}
         width={width}
         height={height}
