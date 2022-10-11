@@ -80,8 +80,6 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
           case "a":
             moveSnake(-20, 0, disallowedDirection);
             break;
-          case " ":
-          case "Spacebar":
           case "Enter":
           case "D":
           case "d":
@@ -94,8 +92,8 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
           disallowedDirection !== "LEFT" &&
           disallowedDirection !== "UP" &&
           disallowedDirection !== "DOWN" &&
-          (event.key === " " ||
-            event.key === "Spacebar" ||
+          (event.key === "d" ||
+            event.key === "D" ||
             event.key === "Enter")
         )
           moveSnake(20, 0, disallowedDirection); //Move RIGHT at start
